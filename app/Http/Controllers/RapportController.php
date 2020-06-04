@@ -10,7 +10,7 @@ class RapportController extends Controller
 
    public function  getClient(Request $request){
        $clients =client::whereBetween('created_at', [$request->start,$request->end])->get();
-<<<<<<< HEAD
+
       
       return response()->json($clients) ;
    }
@@ -20,14 +20,9 @@ class RapportController extends Controller
    function convert_orteps_to_html()
     {
      $client = $this->getClient();
-=======
+
        $mesures =Mesure::whereBetween('created_at', [$request->start,$request->end])->get();
-       $mesures = DB::table('post_tag')
-       ->join('tags', 'post_tag.tag_id', '=', 'tags.id')
-      ->select(DB::raw('count(*) as repetition, tags.name'))
-      ->groupBy('post_tag.tag_id')
-      ->orderBy('repetition', 'desc')
-      ->get();
+       
        $output = '
       <h4> <span align="left">MAURIBOIS 2020</span>
        <b align="center"><h2 align="center">تقرير</h2></b>
@@ -86,7 +81,7 @@ class RapportController extends Controller
    function convert_rapport_to_html()
     {
      $clients = $this->getClient();
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
+
      $output = '
     <h4> <span align="left">MAURIBOIS 2020</span>
      <span style="float:right">SUIVI ET EVALUATION</span></h4>
@@ -122,8 +117,8 @@ class RapportController extends Controller
      $output .= '</table>';
      return $output;
     }
-<<<<<<< HEAD
+
 }    
-=======
-}    
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
+
+   
+
