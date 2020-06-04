@@ -10,6 +10,7 @@ class RapportController extends Controller
 
    public function  getClient(Request $request){
        $clients =client::whereBetween('created_at', [$request->start,$request->end])->get();
+<<<<<<< HEAD
       
       return response()->json($clients) ;
    }
@@ -19,6 +20,73 @@ class RapportController extends Controller
    function convert_orteps_to_html()
     {
      $client = $this->getClient();
+=======
+       $mesures =Mesure::whereBetween('created_at', [$request->start,$request->end])->get();
+       $mesures = DB::table('post_tag')
+       ->join('tags', 'post_tag.tag_id', '=', 'tags.id')
+      ->select(DB::raw('count(*) as repetition, tags.name'))
+      ->groupBy('post_tag.tag_id')
+      ->orderBy('repetition', 'desc')
+      ->get();
+       $output = '
+      <h4> <span align="left">MAURIBOIS 2020</span>
+       <b align="center"><h2 align="center">تقرير</h2></b>
+       <h3 align="center"> يحتوي النقرير التالي علي المعطيات بين تاريخي </h3>
+       <p  align="center"style="font-size: 18px" dir="rtl"> '.$request->start.'   و  '.$request->end.'  </p>
+       <b style="float:right ;border-bottom:solid 2px black"> الزبناء </b>
+       <br>
+       <ul class="list-group">
+       <li class="list-group-item d-flex justify-content-between align-items-center"  dir="rtl" style="border:1px solid black; padding: 5px 20px" >
+       <b style="float:right ; padding-right:5px" >   عدد الزبنء الجدد </b>
+         <span class="badge badge-primary " style="float:left">'.$clients->count().'</span>
+      
+       </li>
+     </ul>
+     <b style="float:right ; border-bottom:solid 2px black"> القياسات </b>
+     <br>
+     <ul class="list-group">
+     <li class="list-group-item d-flex justify-content-between align-items-center"  dir="rtl" style="border:1px solid black; padding: 5px 20px" >
+     <b style="float:right ; padding-right:5px" >   عدد القياسات التي تم طلبها </b>
+       <span class="badge badge-primary " style="float:left">'.$mesures->count().'</span>
+            
+     </li>
+
+   </ul>
+   '; foreach($mesures as $mesure)
+   {
+    $output .= '
+    
+    
+
+    
+    <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center"  dir="rtl" style="border:1px solid black; padding: 5px 10px" >
+   
+      <span class="badge badge-primary " style="float:left">'.$mesure->type.'</span>
+   
+    </li>
+    
+   </ul>
+    ';
+   
+   }
+       
+     
+      
+      
+         
+     
+       return $output;
+      }
+ 
+   
+
+
+
+   function convert_rapport_to_html()
+    {
+     $clients = $this->getClient();
+>>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
      $output = '
     <h4> <span align="left">MAURIBOIS 2020</span>
      <span style="float:right">SUIVI ET EVALUATION</span></h4>
@@ -54,4 +122,8 @@ class RapportController extends Controller
      $output .= '</table>';
      return $output;
     }
+<<<<<<< HEAD
 }    
+=======
+}    
+>>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4

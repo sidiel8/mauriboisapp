@@ -28,7 +28,11 @@
 
 
      <div  class="col-md-4">   
+<<<<<<< HEAD
     <form  @submit="print" >
+=======
+    <form  method="GET" action="/print/pdfs">
+>>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
           <b style="float:left">Rapports</b><br>
                <hr>
       
@@ -52,7 +56,12 @@
 
      
     <div class="form-group  ">
+<<<<<<< HEAD
     <button  class="btn btn-success btn-block "><span > Print </span><span></span></button>
+=======
+   <!-- <button  class="btn btn-success btn-block "><span > Print </span><span></span></button> -->
+    <a href="print/pdf/?start=2020-06-01&end=2020-06-04" target="_blank" class=" btn-sm btn-info">print <i class="fas fa-print"></i></a>
+>>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
     
     </div>  
         </form>  
@@ -87,6 +96,7 @@
        <p style="font-size: 18px">   يحتوي النقرير التالي علي المعطيات بين تاريخي </p>
             <p style="font-size: 18px" dir="rtl"> {{this.start}}   الى  {{this.end}}  </p>
 
+<<<<<<< HEAD
     <tr v-for="client in clts" :key="client.id">
       <td >{{client.name}}</td>
       <td>{{client.numero}}</td>
@@ -99,6 +109,28 @@
      
      
     </tr>
+=======
+
+            <div class="card">
+  <div class="card-body" dir="rtl">
+
+        
+
+         <br>
+
+         <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center" >
+  <b>   عدد الزبنء الجدد </b>
+    <span class="badge badge-primary ">{{ clts !=null ?  clts.length : '0'}}</span>
+  </li>
+
+</ul>
+        
+  </div>
+</div>
+
+
+>>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
 </div>
 </div>
 
@@ -213,4 +245,8 @@ this.$dialog.confirm("êtes-vous sûr de vouloir supprimer ce client ? ", {
       }
 
 
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
