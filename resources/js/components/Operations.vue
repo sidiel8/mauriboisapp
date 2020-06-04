@@ -28,7 +28,7 @@
 
 
      <div  class="col-md-4">   
-    <form  @submit="print" >
+    <form  method="GET" action="/print/pdfs">
           <b style="float:left">Rapports</b><br>
                <hr>
       
@@ -52,7 +52,8 @@
 
      
     <div class="form-group  ">
-    <button  class="btn btn-success btn-block "><span > Print </span><span></span></button>
+   <!-- <button  class="btn btn-success btn-block "><span > Print </span><span></span></button> -->
+    <a href="print/pdf/?start=2020-06-01&end=2020-06-04" target="_blank" class=" btn-sm btn-info">print <i class="fas fa-print"></i></a>
     
     </div>  
         </form>  
@@ -87,18 +88,26 @@
        <p style="font-size: 18px">   يحتوي النقرير التالي علي المعطيات بين تاريخي </p>
             <p style="font-size: 18px" dir="rtl"> {{this.start}}   الى  {{this.end}}  </p>
 
-    <tr v-for="client in clts" :key="client.id">
-      <td >{{client.name}}</td>
-      <td>{{client.numero}}</td>
-      <td>{{client.email ?  client.email :  '--------------' }}</td>
-      <td>{{client.vendeur}}</td>
-      <td>{{client.quartier}}</td>
-      <td>{{
-           client.created_at
-        }}</td>
-     
-     
-    </tr>
+
+            <div class="card">
+  <div class="card-body" dir="rtl">
+
+        
+
+         <br>
+
+         <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center" >
+  <b>   عدد الزبنء الجدد </b>
+    <span class="badge badge-primary ">{{ clts !=null ?  clts.length : '0'}}</span>
+  </li>
+
+</ul>
+        
+  </div>
+</div>
+
+
 </div>
 </div>
 

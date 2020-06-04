@@ -19,7 +19,7 @@ if(Auth::check()){
         return redirect('login') ;
     }
 */
-Route::post('/print', 'RapportController@getClient')->middleware('can:mange');
+Route::get('/print/pdf', 'RapportController@getClient')->middleware('can:mange');
 
 
 

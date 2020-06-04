@@ -5138,6 +5138,78 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5145,7 +5217,10 @@ __webpack_require__.r(__webpack_exports__);
       loading: false,
       errored: false,
       phone: '',
-      resultat: 'Ce Client N\'existe Pas '
+      resultat: 'Ce Client N\'existe Pas ',
+      start: '',
+      end: '',
+      clts: {}
     };
   },
   methods: {
@@ -5163,14 +5238,30 @@ __webpack_require__.r(__webpack_exports__);
     recherche: function recherche(e) {
       var _this = this;
 
-      this.loading = true; // e.disabled;
-
+      this.loading = true;
+      e.disabled;
       axios.get('/clienttoedit/' + this.phone, {}).then(function (response) {
         return _this.clients = response.data;
       })["catch"](function (error) {
         console.log(error);
       })["finally"](function () {
         return _this.loading = false;
+      });
+    },
+    print: function print(e) {
+      var _this2 = this;
+
+      // this.loading= true ;
+      e.disabled;
+      axios.post('/print/', {
+        start: this.start,
+        end: this.end
+      }).then(function (response) {
+        return _this2.clts = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      })["finally"](function () {
+        return _this2.loading = false;
       });
     }
   }
@@ -64665,15 +64756,17 @@ var render = function() {
       _c("div", { staticClass: "card-body" }, [
         _c("h4", { staticClass: "card-title" }, [_vm._v("OPERATIONS ")]),
         _vm._v(" "),
-        _c("div", [
-          _c("form", { on: { submit: _vm.recherche } }, [
-            _c("b", { staticStyle: { float: "left" } }, [
-              _vm._v("Recherche Des Client")
-            ]),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "form-group col-md-4" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("form", { on: { submit: _vm.recherche } }, [
+              _c("b", { staticStyle: { float: "left" } }, [
+                _vm._v("Recherche Des Client")
+              ]),
+              _c("br"),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
                 _c("input", {
                   directives: [
                     {
@@ -64700,10 +64793,91 @@ var render = function() {
                     }
                   }
                 })
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(0)
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("form", { attrs: { method: "GET", action: "/print/pdfs" } }, [
+              _c("b", { staticStyle: { float: "left" } }, [_vm._v("Rapports")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group " }, [
+                _c(
+                  "b",
+                  { staticStyle: { float: "left" }, attrs: { for: "start" } },
+                  [_vm._v("Date Debut:")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.start,
+                      expression: "start"
+                    }
+                  ],
+                  attrs: {
+                    type: "date",
+                    id: "start",
+                    value: "2020-05-28",
+                    min: "2020-05-28",
+                    max: "2020-12-31"
+                  },
+                  domProps: { value: _vm.start },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.start = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group " }, [
+                _c(
+                  "b",
+                  { staticStyle: { float: "left" }, attrs: { for: "start" } },
+                  [_vm._v("Date Fin:")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.end,
+                      expression: "end"
+                    }
+                  ],
+                  attrs: {
+                    type: "date",
+                    id: "end",
+                    value: "2020-05-28",
+                    min: "2020-05-28",
+                    max: "2020-12-31"
+                  },
+                  domProps: { value: _vm.end },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.end = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _vm._m(1)
+            ])
           ])
         ])
       ]),
@@ -64720,32 +64894,109 @@ var render = function() {
                   ])
                 : _c(
                     "div",
-                    _vm._l(_vm.clients, function(client) {
-                      return _c(
-                        "li",
+                    [
+                      _vm._l(_vm.clients, function(client) {
+                        return _c(
+                          "li",
+                          {
+                            key: client.id,
+                            staticClass:
+                              "list-group-item d-flex justify-content-between align-items-center",
+                            attrs: { id: client.id }
+                          },
+                          [
+                            _vm._v("\n   " + _vm._s(client.name) + "\n    "),
+                            _c(
+                              "span",
+                              {
+                                staticStyle: { color: "red" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.suppClient(client.id)
+                                  }
+                                }
+                              },
+                              [_vm._v("Supprimer")]
+                            )
+                          ]
+                        )
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
                         {
-                          staticClass:
-                            "list-group-item d-flex justify-content-between align-items-center",
-                          attrs: { id: client.id }
+                          staticClass: "card-body",
+                          staticStyle: { border: "1px solid black" }
                         },
                         [
-                          _vm._v("\n   " + _vm._s(client.name) + "\n    "),
+                          _vm._m(2),
+                          _vm._v(" "),
+                          _c("p", { staticStyle: { "font-size": "18px" } }, [
+                            _vm._v(
+                              "   يحتوي النقرير التالي علي المعطيات بين تاريخي "
+                            )
+                          ]),
+                          _vm._v(" "),
                           _c(
-                            "span",
+                            "p",
                             {
-                              staticStyle: { color: "red" },
-                              on: {
-                                click: function($event) {
-                                  return _vm.suppClient(client.id)
-                                }
-                              }
+                              staticStyle: { "font-size": "18px" },
+                              attrs: { dir: "rtl" }
                             },
-                            [_vm._v("Supprimer")]
-                          )
+                            [
+                              _vm._v(
+                                " " +
+                                  _vm._s(this.start) +
+                                  "   الى  " +
+                                  _vm._s(this.end) +
+                                  "  "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "card" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "card-body",
+                                attrs: { dir: "rtl" }
+                              },
+                              [
+                                _c("br"),
+                                _vm._v(" "),
+                                _c("ul", { staticClass: "list-group" }, [
+                                  _c(
+                                    "li",
+                                    {
+                                      staticClass:
+                                        "list-group-item d-flex justify-content-between align-items-center"
+                                    },
+                                    [
+                                      _c("b", [_vm._v("   عدد الزبنء الجدد ")]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        { staticClass: "badge badge-primary " },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.clts != null
+                                                ? _vm.clts.length
+                                                : "0"
+                                            )
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ]
+                            )
+                          ])
                         ]
                       )
-                    }),
-                    0
+                    ],
+                    2
                   )
             ])
       ])
@@ -64757,12 +65008,42 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "form-group col-md-4 " }, [
-        _c("button", { staticClass: "btn btn-success btn-block " }, [
-          _c("span", [_vm._v(" OK")]),
-          _c("span")
-        ])
+    return _c("div", { staticClass: "form-group  " }, [
+      _c("button", { staticClass: "btn btn-success btn-block " }, [
+        _c("span", [_vm._v(" OK")]),
+        _c("span")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group  " }, [
+      _c(
+        "a",
+        {
+          staticClass: " btn-sm btn-info",
+          attrs: {
+            href: "print/pdf/?start=2020-06-01&end=2020-06-04",
+            target: "_blank"
+          }
+        },
+        [_vm._v("print "), _c("i", { staticClass: "fas fa-print" })]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", { attrs: { "aria-label": "" } }, [
+      _c("ol", { staticClass: "breadcrumb", attrs: { dir: "rtl" } }, [
+        _c(
+          "li",
+          { staticClass: "breadcrumb-item active", attrs: { dir: "rtl" } },
+          [_c("h3", [_vm._v("تقرير")])]
+        )
       ])
     ])
   }
