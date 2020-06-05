@@ -29,7 +29,7 @@
 
      <div  class="col-md-4">   
 
-    <form  @submit="print" >
+    
 
     <form  method="GET" action="/print/pdfs">
 

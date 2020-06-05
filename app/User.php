@@ -69,4 +69,12 @@ public function getAllPermissionsAttribute() {
       }
       return $permissions;
   }
+
+  public function clients(){
+    return $this->hasMany('App\Client' , 'vendeur' , 'nv');
+}
+
+public function mesures(){
+    //return $this->hasMany('App\Mesure' , 'user_id' , 'id');
+}
 }

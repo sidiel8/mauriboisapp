@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\User ;
 class Client extends Model
 {
     protected $casts = [
@@ -23,4 +23,9 @@ class Client extends Model
     public function croquis(){
         return $this->hasMany('App\Croquis' , 'client_id' , 'id');
     }
+
+    public function user(){
+        return $this->belongsTo('App\User','venduer' , 'nv');
+}
+    
 }

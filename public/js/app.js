@@ -5201,8 +5201,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-=======
 //
 //
 //
@@ -5212,7 +5210,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -10266,11 +10285,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
 exports.push([module.i, "\n.lds-ripple[data-v-6ca9e6be] {\r\n  display: inline-block;\r\n  position: relative;\r\n  width: 80px;\r\n  height: 80px;\n}\n.lds-ripple div[data-v-6ca9e6be] {\r\n  position: absolute;\r\n  border: 4px solid #3490dc;\r\n  opacity: 1;\r\n  border-radius: 50%;\r\n  -webkit-animation: lds-ripple-data-v-6ca9e6be 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\r\n          animation: lds-ripple-data-v-6ca9e6be 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n}\n.lds-ripple div[data-v-6ca9e6be]:nth-child(2) {\r\n  -webkit-animation-delay: -0.5s;\r\n          animation-delay: -0.5s;\n}\n@-webkit-keyframes lds-ripple-data-v-6ca9e6be {\n0% {\r\n    top: 36px;\r\n    left: 36px;\r\n    width: 0;\r\n    height: 0;\r\n    opacity: 1;\n}\n100% {\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 72px;\r\n    height: 72px;\r\n    opacity: 0;\n}\n}\n@keyframes lds-ripple-data-v-6ca9e6be {\n0% {\r\n    top: 36px;\r\n    left: 36px;\r\n    width: 0;\r\n    height: 0;\r\n    opacity: 1;\n}\n100% {\r\n    top: 0px;\r\n    left: 0px;\r\n    width: 72px;\r\n    height: 72px;\r\n    opacity: 0;\n}\n}\r\n\r\n", ""]);
-=======
-exports.push([module.i, "\n.lds-ripple[data-v-6ca9e6be] {\n  display: inline-block;\n  position: relative;\n  width: 80px;\n  height: 80px;\n}\n.lds-ripple div[data-v-6ca9e6be] {\n  position: absolute;\n  border: 4px solid #3490dc;\n  opacity: 1;\n  border-radius: 50%;\n  -webkit-animation: lds-ripple-data-v-6ca9e6be 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n          animation: lds-ripple-data-v-6ca9e6be 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n}\n.lds-ripple div[data-v-6ca9e6be]:nth-child(2) {\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n}\n@-webkit-keyframes lds-ripple-data-v-6ca9e6be {\n0% {\n    top: 36px;\n    left: 36px;\n    width: 0;\n    height: 0;\n    opacity: 1;\n}\n100% {\n    top: 0px;\n    left: 0px;\n    width: 72px;\n    height: 72px;\n    opacity: 0;\n}\n}\n@keyframes lds-ripple-data-v-6ca9e6be {\n0% {\n    top: 36px;\n    left: 36px;\n    width: 0;\n    height: 0;\n    opacity: 1;\n}\n100% {\n    top: 0px;\n    left: 0px;\n    width: 72px;\n    height: 72px;\n    opacity: 0;\n}\n}\n\n", ""]);
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
 
 // exports
 
@@ -64103,15 +64118,9 @@ var render = function() {
                         attrs: { role: "alert" }
                       },
                       [
-<<<<<<< HEAD
                         _vm._v("\r\n     LE CLINET "),
                         _c("strong", [_vm._v("  " + _vm._s(_vm.name) + " ")]),
                         _vm._v(" \r\n a été ajouté(e) avec succès .\r\n     "),
-=======
-                        _vm._v("\n     LE CLINET "),
-                        _c("strong", [_vm._v("  " + _vm._s(_vm.name) + " ")]),
-                        _vm._v(" \n a été ajouté(e) avec succès .\n     "),
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
                         _c("br"),
                         _vm._v(" "),
                         _vm._m(1)
@@ -64443,11 +64452,7 @@ var staticRenderFns = [
         _c("div", { staticClass: " " }, [
           _c("button", { staticClass: "btn btn-primary btn-block" }, [
             _vm._v(
-<<<<<<< HEAD
               "\r\n                                           Ajouter\r\n                                        "
-=======
-              "\n                                           Ajouter\n                                        "
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
             )
           ])
         ])
@@ -64743,14 +64748,10 @@ var staticRenderFns = [
           "data-target": "#exampleModalLong"
         }
       },
-<<<<<<< HEAD
       [
         _vm._v("\r\n Nouveau Decharge "),
         _c("i", { staticClass: "fas fa-plus" })
       ]
-=======
-      [_vm._v("\n Nouveau Decharge "), _c("i", { staticClass: "fas fa-plus" })]
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
     )
   }
 ]
@@ -64824,11 +64825,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-4" }, [
-<<<<<<< HEAD
-            _c("form", { on: { submit: _vm.print } }, [
-=======
             _c("form", { attrs: { method: "GET", action: "/print/pdfs" } }, [
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
               _c("b", { staticStyle: { float: "left" } }, [_vm._v("Rapports")]),
               _c("br"),
               _vm._v(" "),
@@ -64982,7 +64979,6 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-<<<<<<< HEAD
                           _vm._l(_vm.clts, function(client) {
                             return _c("tr", { key: client.id }, [
                               _c("td", [_vm._v(_vm._s(client.name))]),
@@ -65005,10 +65001,8 @@ var render = function() {
                               _vm._v(" "),
                               _c("td", [_vm._v(_vm._s(client.created_at))])
                             ])
-                          })
-                        ],
-                        2
-=======
+                          }),
+                          _vm._v(" "),
                           _c("div", { staticClass: "card" }, [
                             _c(
                               "div",
@@ -65048,8 +65042,8 @@ var render = function() {
                               ]
                             )
                           ])
-                        ]
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
+                        ],
+                        2
                       )
                     ],
                     2
@@ -65076,12 +65070,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group  " }, [
-<<<<<<< HEAD
       _c("button", { staticClass: "btn btn-success btn-block " }, [
         _c("span", [_vm._v(" Print ")]),
         _c("span")
-      ])
-=======
+      ]),
+      _vm._v(" "),
       _c(
         "a",
         {
@@ -65093,7 +65086,6 @@ var staticRenderFns = [
         },
         [_vm._v("print "), _c("i", { staticClass: "fas fa-print" })]
       )
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
     ])
   },
   function() {
@@ -82836,13 +82828,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! E:\laravel2020\mauriboisapp\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! E:\laravel2020\mauriboisapp\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! D:\app backp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\app backp\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> 7b0d18e0d601310e72b71d77a0780b839bb28dd4
 
 
 /***/ })
