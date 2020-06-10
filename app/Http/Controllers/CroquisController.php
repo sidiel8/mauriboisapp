@@ -14,6 +14,17 @@ class CroquisController extends Controller
         return  response()->json($croquis) ;
     }
 
+    public function showCroquis($id){
+        $croquis = Croquis::orderBy('created_at' , 'DESC')->where('id', $id)->with(['mesure'])->get();
+      //$mesures = $client->mesures() ;
+        return  response()->json($croquis) ;
+    }
+
+    public function croquis(){
+        $croquis = Croquis::orderBy('created_at' , 'DESC')->with(['client','mesure'])->get();
+      //$mesures = $client->mesures() ;
+        return  response()->json($croquis) ;
+    }
 
     public function store(Request $request){
        

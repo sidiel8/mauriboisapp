@@ -18,8 +18,27 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+    <script>
+  
+      // Enable pusher logging - don't include this in production
+      Pusher.logToConsole = true;
+  
+      var pusher = new Pusher('75338517cade2b3fbbbe', {
+        cluster: 'eu'
+      });
+  
+      var channel = pusher.subscribe('my-channel');
+      channel.bind('my-event', function(data) {
+        alert(JSON.stringify(data));
+      });
+    </script>
+
+
 </head>
 <body>
+  
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light ">
             <div class="container">

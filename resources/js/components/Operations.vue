@@ -8,7 +8,7 @@
   <div class="row">
  
      <div class="col-md-4" >   
-    <form  @submit="recherche" >
+    <form   >
           <b style="float:left">Recherche Des Client</b><br>
         <hr>
       
@@ -20,7 +20,7 @@
 
      
     <div class="form-group  ">
-    <button  class="btn btn-success btn-block "><span > OK</span><span></span></button>
+    <button  @click="recherche" class="btn btn-success btn-block "><span > OK</span><span></span></button>
     </div>
       
         </form>  
@@ -57,10 +57,10 @@
      
     <div class="form-group  ">
 
-    <button  class="btn btn-success btn-block "><span > Print </span><span></span></button>
+   
 
    <!-- <button  class="btn btn-success btn-block "><span > Print </span><span></span></button> -->
-    <a href="print/pdf/?start=2020-06-01&end=2020-06-04" target="_blank" class=" btn-sm btn-info">print <i class="fas fa-print"></i></a>
+    <a class="btn btn-success btn-block " :href="'print/pdf/?start='+this.start+'&end='+this.end" target="_blank" >Print <i class="fas fa-print"></i></a>
 
     
     </div>  
@@ -85,52 +85,7 @@
     <span  @click="suppClient(client.id)" style="color:red ">Supprimer</span>
     
   </li>
- <div class="card-body"  style="border:1px solid black">
-  <nav aria-label="">
-  <ol class="breadcrumb" dir="rtl">
-    <li class="breadcrumb-item active" dir="rtl"><h3>تقرير</h3></li>
-  </ol>
-</nav>
-         
 
-       <p style="font-size: 18px">   يحتوي النقرير التالي علي المعطيات بين تاريخي </p>
-            <p style="font-size: 18px" dir="rtl"> {{this.start}}   الى  {{this.end}}  </p>
-
-
-    <tr v-for="client in clts" :key="client.id">
-      <td >{{client.name}}</td>
-      <td>{{client.numero}}</td>
-      <td>{{client.email ?  client.email :  '--------------' }}</td>
-      <td>{{client.vendeur}}</td>
-      <td>{{client.quartier}}</td>
-      <td>{{
-           client.created_at
-        }}</td>
-     
-     
-    </tr>
-
-
-            <div class="card">
-  <div class="card-body" dir="rtl">
-
-        
-
-         <br>
-
-         <ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center" >
-  <b>   عدد الزبنء الجدد </b>
-    <span class="badge badge-primary ">{{ clts !=null ?  clts.length : '0'}}</span>
-  </li>
-
-</ul>
-        
-  </div>
-</div>
-
-
-</div>
 </div>
 
   
@@ -197,7 +152,7 @@ this.$dialog.confirm("êtes-vous sûr de vouloir supprimer ce client ? ", {
     recherche(e){
          
                 this.loading= true ;
-                e.disabled;
+                e.preventDefault();
         axios.get('/clienttoedit/'+this.phone, {
                    
                }).then(response => this.clients=response.data
@@ -220,7 +175,7 @@ this.$dialog.confirm("êtes-vous sûr de vouloir supprimer ce client ? ", {
         axios.post('/print/', {
                      start:this.start,
                      end:this.end ,
-               }).then(response => this.clts=response.data
+               }).then(
 
             
                

@@ -80,7 +80,11 @@ Route::delete('/mesure/{id}' , 'MesureController@delete')->middleware(['can:mang
 
 Route::post('/croquis' , 'CroquisController@store')->middleware(['can:mange'||'can:actiu']);
 Route::get('/croquis/client/{id}' , 'CroquisController@index')->middleware('auth');
+Route::get('/croquis/{id}' , 'CroquisController@showCroquis')->middleware('auth');
 Route::post('/croquis/image' , 'CroquisController@upload')->middleware(['can:mange'||'can:actiu']);
+Route::get('/faireundevis' , 'CroquisController@croquis')->middleware('auth') ;
+
+
 
 Route::post('/reclamations' , 'ReclamationController@store')->middleware('can:mange') ;
 Route::get('/reclamations' , 'ReclamationController@index')->middleware('can:mange') ;

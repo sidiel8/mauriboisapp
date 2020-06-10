@@ -13,4 +13,8 @@ class Mesure extends Model
 public function confirmations(){
     return $this->hasMany(Confirmation::class , 'mesure_id' ,);
 }
+
+public function croquis(){
+    return $this->hasMany(Croquis::class , 'mesure_id' ,);
+}
 }

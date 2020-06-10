@@ -24,17 +24,17 @@
                    
                    <hr>
                     </div>
-                    <div v-else>
+                    <div>
                        <h3>Listes Des Croquis</h3>
     <div class="card mb-3"  v-for="c in allCroquis.croquis" :key="c.id"  >
       <div class="card-body" style="padding:5px">
-        <h5 class="card-title"><b>{{c.mesure.type}}</b></h5>
+        <h5 class="card-title"><b>{{c.filename}}</b></h5>
         <p class="card-text">{{c.designation  }}</p>
         <embed :src="'/images/croquis/'+c.filename" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" />
 
         <!-- <img  :src="'/images/'+c.filename"  style="width:100%"/> -->
         <p > Date :{{ moment(c.created_at).locale('fr').format('LL')}}</p>
-        <span  class="btn btn-primary btn-sm mb-0">{{c.designer}}</span>  <a  class="btn btn-success btn-sm" :href="'/images/'+c.filename" style="float:right" download>
+        <span  class="btn btn-primary btn-sm mb-0">{{c.designer}}</span>  <a  class="btn btn-success btn-sm" :href="'/images/croquis/'+c.filename" style="float:right" download>
            Telecharger 
 </a>
       </div>

@@ -50,6 +50,7 @@ import Home from './components/Home.vue' ;
 import Client from './components/ClientsComponent.vue' ;
 import Test from './components/fortest.vue' ;
 import Mesure from './components/MesuresComponent.vue' ;
+import FaireUnDevis from './components/FaireUnDevis.vue' ;
 import Devis from './components/ListeDevisComponent.vue' ;
 import Factures from './components/ListeFactureComponent.vue' ;
 import StockageEtLivraison from './components/StockageEtLivraison.vue' ;
@@ -118,6 +119,10 @@ const routes = [
   { 
     path: '/operations',
     component: Operations 
+  },
+  { 
+    path: '/faireundevis',
+    component: FaireUnDevis 
   }
 
  ]
